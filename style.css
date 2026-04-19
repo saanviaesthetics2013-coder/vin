@@ -1,0 +1,86 @@
+body {
+  margin: 0;
+  font-family: "Georgia", serif;
+  overflow: hidden;
+  color: #222;
+
+  /* animated gradient */
+  background: linear-gradient(-45deg,#ff9a9e,#fad0c4,#a18cd1,#fbc2eb);
+  background-size: 400% 400%;
+  animation: bg 15s ease infinite;
+}
+
+@keyframes bg {
+  0% {background-position:0%}
+  50% {background-position:100%}
+  100% {background-position:0%}
+}
+
+/* layout */
+#app {
+  display: flex;
+  height: 100vh;
+}
+
+/* sidebar */
+#sidebar {
+  width: 240px;
+  padding: 25px;
+  background: rgba(255,255,255,0.3);
+  backdrop-filter: blur(20px);
+}
+
+#sidebar h1 {
+  font-size: 40px;
+}
+
+#sidebar button {
+  width: 100%;
+  margin: 10px 0;
+  padding: 14px;
+  font-size: 20px;
+  border-radius: 15px;
+  border: none;
+  background: rgba(255,255,255,0.5);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#sidebar button:hover {
+  transform: scale(1.05);
+}
+
+/* content */
+#content {
+  flex: 1;
+  padding: 50px;
+  font-size: 26px;
+  overflow-y: auto;
+  animation: fade 0.5s ease;
+}
+
+@keyframes fade {
+  from {opacity:0; transform:translateY(10px)}
+  to {opacity:1; transform:translateY(0)}
+}
+
+/* cards */
+.card {
+  background: rgba(255,255,255,0.3);
+  backdrop-filter: blur(15px);
+  padding: 25px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+/* particles */
+.particle {
+  position: fixed;
+  pointer-events: none;
+  animation: float linear infinite;
+}
+
+@keyframes float {
+  from {transform:translateY(-10vh)}
+  to {transform:translateY(110vh)}
+}
